@@ -24,25 +24,29 @@ insert into LIVRARIA (NOME_LIVRO,NOME_AUTOR,SEXO_AUTOR,NUMERO_PAGINAS_LIVRO,NOME
 	('Copas Inesqueciveis','Marco Alcantara', 'M', 200, 'Larson', 130.98, 'RS', 2018);
 	('O poder da mente', 'Clara Mafra', 'F', 120, 'Continental', 56.58, 'SP', 2017);
 	
-/* 1trazer todos os dados*/
+/* 1 bring all the data*/
 Select * from livraria;
 
-/* 2Trazer o nome do livro e o nome da editora*/
+/* 2Bring the name of the book and the name of the publisher */
  Select nome_livro, nome_editora from livraria;
  
- /* 3 – Trazer o nome do livro e a UF dos livros publicados por autores do sexo masculino.*/
+/* 3 – Bring the name of the book and UF of books published by male authors.*/
+
 	Select nome_livro, numero_paginas_livro from livraria
 	where sexo_autor = 'M';
 	
-	/*4 Trazer o nome do livro e o número de páginas dos livros publicados por autores do sexo feminino.*/
+/*4 Bring the name of the book and the number of pages of books published by female authors.*/
+
 	Select nome_livro, numero_paginas_livro from livraria
 	where sexo_autor = 'F';
 	
-	/*– 5Trazer os valores dos livros das editoras de São Paulo.*/
+/*– 5Bring the values ​​of books from publishers in São Paulo.*/
+
 	Select livro,valor_livro from livraria 
 	where UF_EDITORA = 'SP';
 	
-	/*6 – Trazer os dados dos autores do sexo masculino que tiveram livros publicados por São Paulo ou Rio de Janeiro (Questão Desafio).*/
+/*6 – Bring data from male authors who had books published in São Paulo or Rio de Janeiro (Questão Desafio).*/
+
 	Select * from livraria
 	where sexo_autor = 'M' 
 	and (UF_EDITORA = 'SP'
